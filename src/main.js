@@ -26,11 +26,11 @@ Vue.directive('theme', {
 })
 
 // Filters
-Vue.filter('uppercase', function (value) {
+Vue.filter('uppercase', (value) => {
   return value.toUpperCase();
 });
 
-Vue.filter('snippet', function (value) {
+Vue.filter('snippet', (value) => {
   return value.slice(0, 100).concat('...');
 })
 
