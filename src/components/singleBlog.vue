@@ -1,7 +1,13 @@
 <template>
   <div id="single-blog">
     <h1>{{ blog.title }}</h1>
-    <article>{{ blog.body }}</article>
+    <article>{{ blog.content }}</article>
+    <p>Author: {{ blog.author }}</p>
+    <ul>
+      <li :key="category.id" v-for="category in blog.categories">
+        {{ category }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -15,10 +21,14 @@ export default {
   },
   created() {
     this.$http
-      .get(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
+      .get(
+        `https://vue-blog-crypt0-default-rtdb.europe-west1.firebasedatabase.app/posts/${this.id}.json`
+      )
       .then((data) => {
-        console.log(data);
-        this.blog = data.body;
+        return data.json();
+      })
+      .then((data) => {
+        this.blog = data;
       });
   },
 };
