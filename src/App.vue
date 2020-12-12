@@ -1,33 +1,32 @@
 <template>
-    <div>
-        <show-blogs></show-blogs>
-    </div>
+  <div>
+    <show-blogs></show-blogs>
+    <list-blogs></list-blogs>
+  </div>
 </template>
 
 <script>
 // Imports
-import addBlog from './components/addBlog.vue';
-import showBlogs from './components/showBlogs.vue';
+import addBlog from "./components/addBlog.vue";
+import showBlogs from "./components/showBlogs.vue";
+import listBlogs from "./components/listBlogs.vue";
 
 export default {
-    components: {
-        'add-blog': addBlog,
-        'show-blogs': showBlogs,
-    },
-    data () {
-        return {
-
-        }
-    },
-    methods: {
-
-    }
-}
+  components: {
+    "add-blog": addBlog,
+    "show-blogs": showBlogs,
+    "list-blogs": listBlogs,
+  },
+  data() {
+    return {};
+  },
+  methods: {},
+};
 </script>
 
 <style>
-body{
-    margin: 0;
-    font-family: 'Nunito SemiBold';
+body {
+  margin: 0;
+  font-family: "Nunito SemiBold";
 }
 </style>
